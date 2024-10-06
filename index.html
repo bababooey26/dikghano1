@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        /* إعدادات الحجم المشترك لكل الصور */
+        .image-container img, .image-container-2 img, .image-container-3 img {
+            width: 1080px;
+            height: 2408px;
+            animation-fill-mode: forwards;
+        }
+
+        .image-container {
+            animation: moveUp 1s ease-in-out forwards;
+        }
+
+        .image-container-2 {
+            position: absolute;
+            animation: moveDown 2s ease-in-out forwards;
+        }
+
+        .image-container-3 {
+            position: absolute;
+            opacity: 0; /* الصورة تبدأ مخفية */
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 2s; /* التأخير لمدة ثانية قبل البدء */
+        }
+
+        @keyframes moveUp {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(-200px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="path_to_your_first_image.png" alt="Image 1">
+    </div>
+
+    <div class="image-container-2">
+        <img src="path_to_your_second_image.png" alt="Image 2">
+    </div>
+
+    <div class="image-container-3">
+        <img src="path_to_your_third_image.png" alt="Image 3">
+    </div>
+
+</body>
+</html>
